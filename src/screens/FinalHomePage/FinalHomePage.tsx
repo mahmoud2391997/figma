@@ -1,5 +1,5 @@
-import { PhoneIcon } from "lucide-react";
-import React from "react";
+import { MenuIcon, PhoneIcon, XIcon } from "lucide-react";
+import React, { useState } from "react";
 import { Button } from "../../components/ui/button";
 import {
   NavigationMenu,
@@ -23,18 +23,12 @@ import { SuccessStoriesSection } from "./sections/SuccessStoriesSection";
 import { WhyChooseUsSection } from "./sections/WhyChooseUsSection";
 
 const navigationItems = [
-  { label: "Services", fontFamily: "[font-family:'Space_Grotesk',Helvetica]" },
-  {
-    label: "Industries",
-    fontFamily: "[font-family:'Space_Grotesk',Helvetica]",
-  },
-  { label: "Solution", fontFamily: "[font-family:'Space_Grotesk',Helvetica]" },
-  {
-    label: "Hire Developers",
-    fontFamily: "[font-family:'Souliyo_Unicode-Regular',Helvetica]",
-  },
-  { label: "Insights", fontFamily: "[font-family:'Space_Grotesk',Helvetica]" },
-  { label: "Company", fontFamily: "[font-family:'Space_Grotesk',Helvetica]" },
+  { label: "Services" },
+  { label: "Industries" },
+  { label: "Solution" },
+  { label: "Hire Developers" },
+  { label: "Insights" },
+  { label: "Company" },
 ];
 
 const partnerLogos = [
@@ -65,39 +59,83 @@ const partnerLogos = [
 ];
 
 export const FinalHomePage = (): JSX.Element => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="bg-white overflow-hidden w-full relative">
-      <header className="relative w-full h-[92px] bg-white top-5">
-        <div className="max-w-[1920px] mx-auto relative h-full">
-          <img
-            className="absolute top-4 left-[120px] w-[352px] h-[60px] object-cover"
-            alt="Group"
-            src="/group-11--3--1-1.png"
-          />
+      <header className="relative w-full h-[92px] bg-white top-0 z-50 shadow-md">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+          <div className="flex-shrink-0">
+            <img
+              className="h-12 w-auto"
+              alt="Group"
+              src="/group-11--3--1-1.png"
+            />
+          </div>
 
-          <NavigationMenu className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <NavigationMenuList className="flex justify-center gap-[42px]">
-              {navigationItems.map((item, index) => (
-                <NavigationMenuItem key={index}>
-                  <NavigationMenuTrigger className="inline-flex items-center gap-[5px] bg-transparent hover:bg-transparent data-[state=open]:bg-transparent h-auto p-0">
-                    <span
-                      className={`mt-[-1.00px] ${item.fontFamily} font-semibold text-secondary-color text-[17px] tracking-[0] leading-[normal] whitespace-nowrap`}
-                    >
-                      {item.label}
-                    </span>
-                  </NavigationMenuTrigger>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className="hidden lg:flex items-center">
+            <NavigationMenu>
+              <NavigationMenuList className="flex justify-center gap-[42px]">
+                {navigationItems.map((item, index) => (
+                  <NavigationMenuItem key={index}>
+                    <NavigationMenuTrigger className="inline-flex items-center gap-[5px] bg-transparent hover:bg-transparent data-[state=open]:bg-transparent h-auto p-0">
+                      <span className="font-semibold text-secondary-color text-[17px] tracking-[0] leading-[normal] whitespace-nowrap">
+                        {item.label}
+                      </span>
+                    </NavigationMenuTrigger>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
-          <Button className="absolute top-[22px] left-[1656px] h-auto inline-flex items-center justify-center gap-2.5 px-[25px] py-[13px] rounded-[5px] bg-[linear-gradient(180deg,rgba(43,77,255,1)_0%,rgba(3,73,239,1)_100%)] hover:opacity-90">
-            <PhoneIcon className="w-[17px] h-[17px]" />
-            <span className="mt-[-1.00px] [font-family:'Space_Grotesk',Helvetica] font-semibold text-white text-[17px] tracking-[0] leading-[normal] whitespace-nowrap">
-              Contact
-            </span>
-          </Button>
+          <div className="hidden lg:flex items-center">
+            <Button className="h-auto inline-flex items-center justify-center gap-2.5 px-[25px] py-[13px] rounded-[5px] bg-primary-gradient hover:opacity-90">
+              <PhoneIcon className="w-[17px] h-[17px]" />
+              <span className="font-semibold text-white text-[17px] tracking-[0] leading-[normal] whitespace-nowrap">
+                Contact
+              </span>
+            </Button>
+          </div>
+
+          <div className="lg:hidden flex items-center">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <XIcon className="h-6 w-6" />
+              ) : (
+                <MenuIcon className="h-6 w-6" />
+              )}
+            </Button>
+          </div>
         </div>
+
+        {isMobileMenuOpen && (
+          <div className="lg:hidden absolute top-[92px] left-0 w-full bg-white shadow-lg">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              {navigationItems.map((item) => (
+                <a
+                  key={item.label}
+                  href="#"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-secondary-color hover:text-primary-color hover:bg-gray-50"
+                >
+                  {item.label}
+                </a>
+              ))}
+              <div className="px-3 py-4">
+                <Button className="w-full h-auto inline-flex items-center justify-center gap-2.5 px-[25px] py-[13px] rounded-[5px] bg-primary-gradient hover:opacity-90">
+                  <PhoneIcon className="w-[17px] h-[17px]" />
+                  <span className="font-semibold text-white text-[17px] tracking-[0] leading-[normal] whitespace-nowrap">
+                    Contact
+                  </span>
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
 
       <HeroSliderSection />
@@ -106,27 +144,20 @@ export const FinalHomePage = (): JSX.Element => {
       <AboutUsSection />
       <SolutionsSection />
 
-      <section className="relative w-full bg-[#f5f6f7] rounded-[15px]">
-        <div className="max-w-[1920px] mx-auto flex flex-col items-center gap-2.5 px-[305px] py-[120px]">
-          <div className="inline-flex flex-col items-center gap-[22px]">
-            <div className="inline-flex flex-col items-start gap-2.5 px-0 py-2.5">
-              <div className="items-center gap-2.5 px-0 py-[17.5px] inline-flex flex-col justify-center">
-                <h2 className="mt-[-1.00px] font-titel font-[number:var(--titel-font-weight)] text-secondary-color text-[length:var(--titel-font-size)] tracking-[var(--titel-letter-spacing)] leading-[var(--titel-line-height)] whitespace-nowrap [font-style:var(--titel-font-style)]">
-                  Recognized Excellence
-                </h2>
-              </div>
-            </div>
-
-            <div className="inline-flex items-center gap-[177px] pt-0 pb-[30px] px-0">
-              {partnerLogos.map((logo, index) => (
-                <img
-                  key={index}
-                  className={`${logo.width} ${logo.height} object-cover`}
-                  alt={logo.alt}
-                  src={logo.src}
-                />
-              ))}
-            </div>
+      <section className="relative w-full bg-[#f5f6f7] rounded-[15px] py-16 md:py-24 lg:py-[120px] px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-10 md:gap-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary-color text-center tracking-tight leading-tight">
+            Recognized Excellence
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 md:gap-12 lg:gap-24 items-center">
+            {partnerLogos.map((logo, index) => (
+              <img
+                key={index}
+                className="w-full h-auto object-contain" // Adjusted for better responsiveness
+                alt={logo.alt}
+                src={logo.src}
+              />
+            ))}
           </div>
         </div>
       </section>

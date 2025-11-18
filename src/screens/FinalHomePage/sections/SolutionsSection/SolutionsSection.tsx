@@ -37,20 +37,20 @@ const solutionCards = [
 
 export const SolutionsSection = (): JSX.Element => {
   return (
-    <section className="w-full bg-[#0a165e] px-4 py-[120px] lg:px-[305px]">
-      <div className="flex flex-col items-center gap-[25px]">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[25.5px] w-full">
+    <section className="w-full bg-[#0a165e] px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 2xl:px-[305px] py-16 md:py-24 lg:py-[120px]">
+      <div className="flex flex-col items-center gap-8 md:gap-12 lg:gap-[25px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-[25.5px] w-full">
           <div className="flex flex-col justify-center gap-2.5 p-2.5 rounded-[10px]">
-            <div className="flex flex-col gap-[37px]">
+            <div className="flex flex-col gap-4 md:gap-6 lg:gap-[37px]">
               <div className="flex items-center gap-[7px]">
                 <Badge className="h-auto bg-transparent border-0 p-0">
-                  <img className="w-[47px] h-[13px]" alt="Frame" />
+                  <img className="w-[47px] h-[13px]" alt="Frame" src="/frame-10.svg" />
                 </Badge>
-                <span className="font-top-titel font-[number:var(--top-titel-font-weight)] text-transparent text-[length:var(--top-titel-font-size)] tracking-[var(--top-titel-letter-spacing)] leading-[var(--top-titel-line-height)] [font-style:var(--top-titel-font-style)]">
+                <span className="font-semibold text-lg text-primary-color tracking-wide">
                   Solution
                 </span>
               </div>
-              <h2 className="font-titel font-[number:var(--titel-font-weight)] text-white text-[length:var(--titel-font-size)] tracking-[var(--titel-letter-spacing)] leading-[var(--titel-line-height)] [font-style:var(--titel-font-style)] max-w-[388px]">
+              <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight max-w-md">
                 Solutions for Smarter Digital Commerce Growth
               </h2>
             </div>
@@ -61,22 +61,22 @@ export const SolutionsSection = (): JSX.Element => {
               key={index}
               className="bg-[#101c66] border-[#ffffff0f] rounded-[10px]"
             >
-              <CardContent className="p-[25px] pt-[30px]">
-                <div className="flex items-start gap-[30px]">
-                  <img className="flex-shrink-0" alt="Frame" src={card.icon} />
-                  <div className="flex flex-col gap-[18.5px]">
-                    <h3 className="font-box font-[number:var(--box-font-weight)] text-white text-[length:var(--box-font-size)] tracking-[var(--box-letter-spacing)] leading-[var(--box-line-height)] [font-style:var(--box-font-style)] max-w-[268px]">
+              <CardContent className="p-6 md:p-8 lg:p-[25px] lg:pt-[30px]">
+                <div className="flex items-start gap-4 md:gap-6 lg:gap-[30px]">
+                  <img className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12" alt="Frame" src={card.icon} />
+                  <div className="flex flex-col gap-3 md:gap-4 lg:gap-[18.5px]">
+                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight max-w-xs">
                       {card.title}
                     </h3>
-                    <p className="[font-family:'Space_Grotesk',Helvetica] font-normal text-[#ffffff99] text-[17px] tracking-[0] leading-[27px] max-w-[268px]">
+                    <p className="text-base md:text-lg font-normal text-[#ffffff99] leading-relaxed max-w-xs">
                       {card.description}
                     </p>
                     <button className="flex items-center gap-1.5 text-left">
-                      <span className="font-semibold text-[17px] leading-[27px] [font-family:'Space_Grotesk',Helvetica] text-white tracking-[0]">
+                      <span className="font-semibold text-base md:text-lg text-white tracking-wide">
                         Read More
                       </span>
                       <img
-                        className="w-[18px] h-[18px]"
+                        className="w-4 h-4 md:w-5 md:h-5"
                         alt="Arrow"
                         src="/component-11.svg"
                       />
@@ -88,28 +88,28 @@ export const SolutionsSection = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[25.5px] w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-[25.5px] w-full">
           {solutionCards.slice(2, 5).map((card, index) => (
             <Card
               key={index}
               className="bg-[#101c66] border-[#ffffff0f] rounded-[10px]"
             >
-              <CardContent className="p-[25px] pt-[30px]">
-                <div className="flex items-start gap-[30px]">
-                  <img className="flex-shrink-0" alt="Frame" src={card.icon} />
-                  <div className="flex flex-col gap-[18.5px]">
-                    <h3 className="font-box font-[number:var(--box-font-weight)] text-white text-[length:var(--box-font-size)] tracking-[var(--box-letter-spacing)] leading-[var(--box-line-height)] [font-style:var(--box-font-style)] max-w-[268px]">
+              <CardContent className="p-6 md:p-8 lg:p-[25px] lg:pt-[30px]">
+                <div className="flex items-start gap-4 md:gap-6 lg:gap-[30px]">
+                  <img className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12" alt="Frame" src={card.icon} />
+                  <div className="flex flex-col gap-3 md:gap-4 lg:gap-[18.5px]">
+                    <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight leading-tight max-w-xs">
                       {card.title}
                     </h3>
-                    <p className="[font-family:'Space_Grotesk',Helvetica] font-normal text-[#ffffff99] text-[17px] tracking-[0] leading-[27px] max-w-[268px]">
+                    <p className="text-base md:text-lg font-normal text-[#ffffff99] leading-relaxed max-w-xs">
                       {card.description}
                     </p>
                     <button className="flex items-center gap-1.5 text-left">
-                      <span className="font-semibold text-[17px] leading-[27px] [font-family:'Space_Grotesk',Helvetica] text-white tracking-[0]">
+                      <span className="font-semibold text-base md:text-lg text-white tracking-wide">
                         Read More
                       </span>
                       <img
-                        className="w-[18px] h-[18px]"
+                        className="w-4 h-4 md:w-5 md:h-5"
                         alt="Arrow"
                         src="/component-11.svg"
                       />
@@ -121,12 +121,12 @@ export const SolutionsSection = (): JSX.Element => {
           ))}
         </div>
 
-        <Button className="h-auto flex items-center gap-2.5 px-[28.5px] py-[19px] rounded-[5px] bg-[linear-gradient(180deg,rgba(43,77,255,1)_0%,rgba(3,73,239,1)_100%)] hover:opacity-90">
-          <span className="[font-family:'Souliyo_Unicode-Regular',Helvetica] font-normal text-white text-[17px] tracking-[0] leading-[normal]">
+        <Button className="h-auto flex items-center gap-2.5 px-6 py-4 md:px-7 md:py-5 rounded-[5px] bg-primary-gradient hover:opacity-90">
+          <span className="font-semibold text-white text-base md:text-lg tracking-wide">
             Explore All Solutions
           </span>
           <img
-            className="w-[18px] h-[18px]"
+            className="w-4 h-4 md:w-5 md:h-5"
             alt="Arrow"
             src="/component-11.svg"
           />

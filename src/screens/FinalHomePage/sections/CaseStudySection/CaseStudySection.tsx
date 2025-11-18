@@ -18,8 +18,8 @@ const caseStudies = [
 
 export const CaseStudySection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full items-center justify-center gap-5 py-[120px] px-4 md:px-8 lg:px-[305px]">
-      <header className="inline-flex flex-col items-center gap-2.5 pb-[25px]">
+    <section className="flex flex-col w-full items-center justify-center gap-8 md:gap-12 py-16 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 2xl:px-[305px]">
+      <header className="inline-flex flex-col items-center gap-2.5 text-center pb-8 md:pb-10">
         <div className="inline-flex items-center gap-[7px]">
           <img
             className="w-[47px] h-[13px]"
@@ -27,7 +27,7 @@ export const CaseStudySection = (): JSX.Element => {
             src="/frame-10.svg"
           />
 
-          <h3 className="font-top-titel font-[number:var(--top-titel-font-weight)] text-primary-color text-[length:var(--top-titel-font-size)] tracking-[var(--top-titel-letter-spacing)] leading-[var(--top-titel-line-height)] whitespace-nowrap [font-style:var(--top-titel-font-style)]">
+          <h3 className="text-lg font-semibold text-primary-color tracking-wide">
             Case Study
           </h3>
 
@@ -38,35 +38,35 @@ export const CaseStudySection = (): JSX.Element => {
           />
         </div>
 
-        <h2 className="font-titel font-[number:var(--titel-font-weight)] text-secondary-color text-[length:var(--titel-font-size)] tracking-[var(--titel-letter-spacing)] leading-[var(--titel-line-height)] whitespace-nowrap [font-style:var(--titel-font-style)]">
+        <h2 className="text-3xl md:text-4xl font-bold text-secondary-color tracking-tight leading-tight max-w-xl">
           Proven Ecommerce Partnerships That Deliver
         </h2>
       </header>
 
-      <div className="inline-flex flex-col items-center justify-center gap-5 w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-[30px] pb-10 w-full">
+      <div className="inline-flex flex-col items-center justify-center gap-8 md:gap-10 w-full">
+        <div className="flex flex-col lg:flex-row items-stretch gap-8 md:gap-[30px] w-full">
           {caseStudies.map((study, index) => (
             <Card
               key={index}
-              className="flex flex-col items-center justify-center bg-[#086ad80d] rounded-[10px] overflow-hidden border border-solid border-[#086ad81a] w-full lg:w-auto"
+              className="flex flex-col items-center justify-center bg-[#086ad80d] rounded-[10px] overflow-hidden border border-solid border-[#086ad81a] w-full lg:flex-1"
             >
-              <CardContent className="p-0 w-full">
+              <CardContent className="p-0 w-full h-full flex flex-col">
                 <div
-                  className="flex flex-col items-start gap-2.5 px-[30px] py-[164.5px] bg-cover bg-center bg-no-repeat w-full"
+                  className="flex flex-col items-start justify-center gap-2.5 px-6 py-20 md:px-8 lg:px-[30px] lg:py-[100px] bg-cover bg-center bg-no-repeat w-full flex-grow"
                   style={{ backgroundImage: `url(${study.backgroundImage})` }}
                 >
-                  <div className="w-full max-w-[580px] [font-family:'Space_Grotesk',Helvetica] font-bold text-transparent text-2xl tracking-[0] leading-[34px]">
+                  <div className="w-full max-w-[580px] text-white text-xl md:text-2xl font-bold leading-normal">
                     {study.subtitle}
                   </div>
                 </div>
 
-                <div className="inline-flex flex-col items-start gap-[1.33px] p-[30px] w-full">
-                  <h4 className="w-full max-w-[580px] [font-family:'Space_Grotesk',Helvetica] font-bold text-secondary-color text-[26px] tracking-[-0.13px] leading-[normal] mb-4">
+                <div className="inline-flex flex-col items-start gap-4 p-6 md:p-8 lg:p-[30px] w-full bg-white">
+                  <h4 className="w-full max-w-[580px] text-secondary-color text-xl md:text-2xl lg:text-[26px] font-bold leading-normal mb-2">
                     {study.title}
                   </h4>
 
-                  <Button className="inline-flex items-center justify-center gap-2.5 px-[29px] py-[19px] h-auto rounded-[5px] bg-[linear-gradient(180deg,rgba(43,77,255,1)_0%,rgba(3,73,239,1)_100%)] hover:opacity-90">
-                    <span className="[font-family:'Space_Grotesk',Helvetica] font-medium text-white text-[17px] tracking-[0] leading-[normal]">
+                  <Button className="inline-flex items-center justify-center gap-2.5 px-6 py-4 md:px-[29px] md:py-[19px] h-auto rounded-[5px] bg-primary-gradient hover:opacity-90">
+                    <span className="font-medium text-white text-base md:text-[17px] leading-normal">
                       Read More
                     </span>
                     <ArrowRightIcon className="w-[18px] h-[18px]" />
@@ -77,11 +77,11 @@ export const CaseStudySection = (): JSX.Element => {
           ))}
         </div>
 
-        <Button className="inline-flex items-center justify-center gap-2.5 px-[29px] py-[19px] h-auto rounded-[5px] bg-[linear-gradient(180deg,rgba(43,77,255,1)_0%,rgba(3,73,239,1)_100%)] hover:opacity-90">
-          <span className="[font-family:'Space_Grotesk',Helvetica] font-medium text-white text-[17px] tracking-[0] leading-[normal]">
+        <Button className="inline-flex items-center justify-center gap-2.5 px-7 py-5 h-auto rounded-[5px] bg-primary-gradient hover:opacity-90">
+          <span className="font-medium text-white text-lg leading-normal">
             View All Case Study
           </span>
-          <ArrowRightIcon className="w-[18px] h-[18px]" />
+          <ArrowRightIcon className="w-5 h-5" />
         </Button>
       </div>
     </section>

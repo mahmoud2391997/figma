@@ -174,65 +174,56 @@ export const HeroSliderSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="relative w-full flex justify-center [background:url(../background.png)_50%_50%_/_cover]">
-      <div className="w-full max-w-[1920px] relative [background:url(../background.png)_50%_50%_/_cover]">
-        <div className="container mx-auto px-[130px] py-[288px]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="flex flex-col gap-5">
-              <div className="flex flex-col gap-3.5">
-                <div className="w-[47px] h-[13px]" />
+    <section className="relative w-full flex justify-center bg-cover bg-center [background:url(../background.png)]">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto py-24 md:py-36 lg:py-48">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div className="flex flex-col gap-6 md:gap-8 text-center lg:text-left">
+              <h1 className="font-bold text-white text-4xl sm:text-5xl md:text-6xl lg:text-[80px] tracking-tight leading-tight md:leading-[90px]">
+                Enterprise AI-Powered eCommerce Development Company
+              </h1>
 
-                <h1 className="[font-family:'Space_Grotesk',Helvetica] font-bold text-white text-[80px] tracking-[-1.00px] leading-[90px]">
-                  Enterprise AI-Powered eCommerce Development Company
-                </h1>
+              <p className="text-[#ffffffb5] text-base sm:text-lg md:text-[17px] leading-relaxed max-w-md mx-auto lg:mx-0">
+                Delivering scalable, secure, and intelligent eCommerce
+                solutions for enterprises, B2B, and global brands.
+              </p>
+
+              <div className="flex justify-center lg:justify-start">
+                <Button className="w-fit h-auto px-6 py-3 md:px-[25px] md:py-[13px] bg-primary-color rounded-[5px] font-semibold text-white text-base md:text-[17px] tracking-wide leading-normal">
+                  Let&#39;s Redefine eCommerce
+                </Button>
               </div>
-
-              <div className="py-2.5">
-                <p className="[font-family:'Space_Grotesk',Helvetica] font-normal text-[#ffffffb5] text-[17px] tracking-[0] leading-[27px] max-w-[420px]">
-                  Delivering scalable, secure, and intelligent eCommerce
-                  solutions for enterprises, B2B, and global brands.
-                </p>
-              </div>
-
-              <Button className="w-fit h-auto px-[25px] py-[13px] bg-primary-color rounded-[5px] [font-family:'Space_Grotesk',Helvetica] font-semibold text-white text-[17px] tracking-[0.09px] leading-[22.8px]">
-                Let&#39;s Redefine eCommerce
-              </Button>
             </div>
 
-            <div className="relative flex items-center justify-center">
-              <div className="absolute top-0 left-0 max-w-[293px] w-[293px] h-[258px] opacity-20 bg-[url(/shape-01.png)] bg-cover bg-[50%_50%]" />
+            <div className="relative hidden lg:flex items-center justify-center">
+              <div className="absolute top-0 left-0 w-full h-full opacity-20 bg-[url(/shape-01.png)] bg-contain bg-no-repeat bg-left-top" />
+              <div className="absolute top-0 right-0 w-full h-full bg-[url(/shape.png)] bg-contain bg-no-repeat bg-right-top" />
+              <div className="relative w-full max-w-2xl h-auto aspect-square bg-[url(/banner-01.png)] bg-contain bg-no-repeat bg-center" />
 
-              <div className="absolute top-0 right-0 max-w-[179px] w-[179px] h-[195px] bg-[url(/shape.png)] bg-cover bg-[50%_50%]" />
-
-              <div className="relative max-w-[739px] w-[739px] h-[689px] bg-[url(/banner-01.png)] bg-cover bg-[50%_50%]" />
-
-              <div className="absolute top-0 left-0">
-                <div className="relative w-40 h-40 rounded-[80px] border border-solid border-[#ffffff14] backdrop-blur-[10.5px] backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(10.5px)_brightness(100%)] [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,0.21)_0%,rgba(125,124,134,0.08)_100%)]">
+              <div className="absolute top-1/4 left-1/4">
+                <div className="relative w-40 h-40 rounded-full border border-solid border-[#ffffff14] backdrop-blur-[10.5px] [background:radial-gradient(50%_50%_at_50%_50%,rgba(255,255,255,0.21)_0%,rgba(125,124,134,0.08)_100%)]">
                   {circularTextLetters.map((letter, index) => (
                     <div
                       key={index}
-                      className={`absolute ${letter.top} ${letter.left} ${letter.width} h-[27px] flex items-center justify-center ${letter.rotation} [font-family:'Space_Grotesk',Helvetica] font-light text-white text-base text-center tracking-[0] leading-[27px] whitespace-nowrap`}
+                      className={`absolute ${letter.top} ${letter.left} ${letter.width} h-auto flex items-center justify-center ${letter.rotation} font-light text-white text-sm text-center tracking-normal leading-normal`}
                     >
                       {letter.char}
                     </div>
                   ))}
 
-                  <div className="flex w-20 h-20 items-center justify-center p-[21px] absolute top-[calc(50.00%_-_40px)] left-[calc(50.00%_-_40px)] rounded-[40px] border border-solid border-[#ffffff14]">
-                    <div className="flex flex-col max-w-20 h-[38px] items-start relative flex-1 grow">
-                      <div className="flex flex-col w-[38px] h-[38px] items-center justify-center relative overflow-hidden">
-                        <div className="relative w-[39.15px] h-[38px] ml-[-0.58px] mr-[-0.58px]">
-                          <img
-                            className="absolute w-[93.84%] h-[96.69%] top-0 left-[2.50%]"
-                            alt="Vector"
-                            src="/vector-1.svg"
-                          />
-
-                          <img
-                            className="absolute w-[60.03%] h-[61.85%] top-[14.53%] left-[16.32%]"
-                            alt="Vector"
-                            src="/vector.svg"
-                          />
-                        </div>
+                  <div className="flex w-20 h-20 items-center justify-center p-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-solid border-[#ffffff14]">
+                    <div className="flex flex-col w-full h-full items-center justify-center relative overflow-hidden">
+                      <div className="relative w-full h-full">
+                        <img
+                          className="absolute w-full h-full top-0 left-0"
+                          alt="Vector"
+                          src="/vector-1.svg"
+                        />
+                        <img
+                          className="absolute w-3/5 h-3/5 top-1/5 left-1/5"
+                          alt="Vector"
+                          src="/vector.svg"
+                        />
                       </div>
                     </div>
                   </div>
@@ -242,8 +233,8 @@ export const HeroSliderSection = (): JSX.Element => {
           </div>
         </div>
 
-        <div className="absolute bottom-[49px] left-[calc(50.00%_-_35px)]">
-          <img className="w-[70px] h-5" alt="Frame" src="/frame-179.svg" />
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+          <img className="w-20 h-auto" alt="Frame" src="/frame-179.svg" />
         </div>
       </div>
     </section>
