@@ -17,62 +17,56 @@ const statsRight = [
 
 export const SuccessStoriesSection = (): JSX.Element => {
   return (
-    <section className="relative w-full bg-[#0a165e] py-[120px] px-4">
-      <div className="max-w-[1310px] mx-auto flex flex-col items-center gap-[62px]">
-        <div className="flex items-start gap-[70px] w-full flex-wrap lg:flex-nowrap">
-          <div className="flex flex-col items-start justify-center gap-[26px] relative flex-1 min-w-[390px]">
-            <img
-              className="absolute top-[359px] left-[39px] w-[310px] h-[300px] object-cover pointer-events-none"
-              alt="Shape"
-              src="/shape-1-1.png"
-            />
-
-            <h2 className="relative w-full font-titel font-[number:var(--titel-font-weight)] text-white text-[length:var(--titel-font-size)] tracking-[var(--titel-letter-spacing)] leading-[var(--titel-line-height)] [font-style:var(--titel-font-style)]">
+    <section className="relative w-full bg-[#0a165e] py-16 md:py-24 lg:py-[120px] px-4 sm:px-6 md:px-8 lg:px-16 xl:px-32 2xl:px-4">
+      <div className="max-w-[1310px] mx-auto flex flex-col items-center gap-12 md:gap-16 lg:gap-[62px]">
+        <div className="flex flex-col lg:flex-row items-start gap-12 md:gap-16 lg:gap-[70px] w-full">
+          <div className="flex flex-col items-start justify-center gap-6 md:gap-8 lg:gap-[26px] relative flex-1">
+            <h2 className="relative w-full text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">
               Success Stories Backed by Global Ecommerce Expertise
             </h2>
 
-            <p className="relative w-full max-w-[600px] [font-family:'Space_Grotesk',Helvetica] font-normal text-[#ffffff99] text-[17px] tracking-[0] leading-[23px]">
+            <p className="relative w-full text-base md:text-lg font-normal text-[#ffffff99] leading-relaxed">
               nopAccelerate empowers enterprises and retailers worldwide with
               AI-driven ecommerce solutions designed for scale, security, and
               measurable growth.
             </p>
           </div>
 
-          <div className="flex items-center gap-10 flex-wrap sm:flex-nowrap">
-            <Card className="rounded-[10px] border-0 [background:url(/frame-75.png)_50%_50%_/_cover,linear-gradient(0deg,rgba(16,28,102,1)_0%,rgba(16,28,102,1)_100%)]">
-              <CardContent className="flex flex-col items-center justify-center gap-[30px] px-[43px] py-[52px]">
+          <div className="flex flex-col sm:flex-row items-stretch gap-6 md:gap-8 lg:gap-10 w-full lg:w-auto">
+            <Card className="flex-1 rounded-[10px] border-0 [background:url(/frame-75.png)_50%_50%_/_cover,linear-gradient(0deg,rgba(16,28,102,1)_0%,rgba(16,28,102,1)_100%)]">
+              <CardContent className="flex flex-col items-center justify-center gap-6 md:gap-8 lg:gap-[30px] p-8 md:p-10 lg:px-[43px] lg:py-[52px] h-full">
                 {statsLeft.map((stat, index) => (
                   <React.Fragment key={index}>
-                    <div className="flex flex-col items-center gap-[18px]">
-                      <div className="font-bold text-[50px] tracking-[-0.50px] leading-[64px] [font-family:'Space_Grotesk',Helvetica] text-white whitespace-nowrap">
+                    <div className="flex flex-col items-center gap-3 md:gap-4 lg:gap-[18px]">
+                      <div className="font-bold text-4xl md:text-5xl text-white tracking-tight leading-tight">
                         {stat.value}
                       </div>
-                      <div className="[font-family:'Space_Grotesk',Helvetica] font-semibold text-white text-lg text-center tracking-[0] leading-[18px] whitespace-nowrap">
+                      <div className="font-semibold text-white text-base md:text-lg text-center tracking-wide leading-tight">
                         {stat.label}
                       </div>
                     </div>
                     {index < statsLeft.length - 1 && (
-                      <Separator className="w-[214px] h-px bg-white/20" />
+                      <Separator className="w-full max-w-[214px] h-px bg-white/20" />
                     )}
                   </React.Fragment>
                 ))}
               </CardContent>
             </Card>
 
-            <Card className="rounded-[10px] border-0 [background:url(/frame-75.png)_50%_50%_/_cover,linear-gradient(0deg,rgba(16,28,102,1)_0%,rgba(16,28,102,1)_100%)]">
-              <CardContent className="flex flex-col items-center justify-center gap-[30px] px-[43px] py-[52px]">
+            <Card className="flex-1 rounded-[10px] border-0 [background:url(/frame-75.png)_50%_50%_/_cover,linear-gradient(0deg,rgba(16,28,102,1)_0%,rgba(16,28,102,1)_100%)]">
+              <CardContent className="flex flex-col items-center justify-center gap-6 md:gap-8 lg:gap-[30px] p-8 md:p-10 lg:px-[43px] lg:py-[52px] h-full">
                 {statsRight.map((stat, index) => (
                   <React.Fragment key={index}>
-                    <div className="flex flex-col items-center gap-[18px]">
-                      <div className="font-bold text-[50px] tracking-[-0.50px] leading-[64px] [font-family:'Space_Grotesk',Helvetica] text-white whitespace-nowrap">
+                    <div className="flex flex-col items-center gap-3 md:gap-4 lg:gap-[18px]">
+                      <div className="font-bold text-4xl md:text-5xl text-white tracking-tight leading-tight">
                         {stat.value}
                       </div>
-                      <div className="[font-family:'Space_Grotesk',Helvetica] font-semibold text-white text-lg text-center tracking-[0] leading-[18px] whitespace-nowrap">
+                      <div className="font-semibold text-white text-base md:text-lg text-center tracking-wide leading-tight">
                         {stat.label}
                       </div>
                     </div>
                     {index < statsRight.length - 1 && (
-                      <Separator className="w-[214px] h-px bg-white/20" />
+                      <Separator className="w-full max-w-[214px] h-px bg-white/20" />
                     )}
                   </React.Fragment>
                 ))}
@@ -81,40 +75,22 @@ export const SuccessStoriesSection = (): JSX.Element => {
           </div>
         </div>
 
-        <Button className="h-auto flex items-center justify-center gap-2.5 px-[29px] py-[19px] rounded-[5px] bg-[linear-gradient(180deg,rgba(43,77,255,1)_0%,rgba(3,73,239,1)_100%)] hover:opacity-90 transition-opacity">
-          <span className="[font-family:'Space_Grotesk',Helvetica] font-medium text-white text-[17px] tracking-[0] leading-[normal]">
+        <Button className="h-auto flex items-center justify-center gap-2.5 px-7 py-5 rounded-[5px] bg-primary-gradient hover:opacity-90 transition-opacity">
+          <span className="font-medium text-white text-lg leading-normal">
             Talk to Our Experts
           </span>
           <img
-            className="w-[18px] h-[18px]"
+            className="w-5 h-5"
             alt="Arrow"
             src="/component-11.svg"
           />
         </Button>
-
-        <img
-          className="absolute top-0 right-0 w-[478px] h-[864px] object-cover pointer-events-none"
-          alt="Decorative element"
-          src="/.png"
-        />
-
-        <img
-          className="absolute top-[446px] left-0 w-64 h-[198px] object-cover pointer-events-none"
-          alt="Decorative element"
-          src="/-6583290.png"
-        />
-
-        <img
-          className="absolute top-[461px] right-10 w-[148px] h-[243px] object-cover pointer-events-none"
-          alt="Decorative element"
-          src="/-6583291.png"
-        />
       </div>
 
-      <div className="max-w-[1498px] mx-auto mt-[120px] px-4">
+      <div className="max-w-[1498px] mx-auto mt-16 md:mt-24 lg:mt-[120px] px-4">
         <Card className="bg-[#f5f6f7] rounded-[15px] border border-solid border-[#3672ff21]">
-          <CardContent className="flex flex-col items-center gap-[22px] px-[61px] py-[50px]">
-            <div className="flex flex-col items-center gap-2.5 w-full">
+          <CardContent className="flex flex-col items-center gap-6 md:gap-8 lg:gap-[22px] p-8 md:p-12 lg:px-[61px] lg:py-[50px]">
+            <div className="flex flex-col items-center gap-2.5 w-full text-center">
               <div className="flex flex-col items-center gap-2.5 py-2.5">
                 <div className="flex items-center gap-[7px]">
                   <img
@@ -122,7 +98,7 @@ export const SuccessStoriesSection = (): JSX.Element => {
                     alt="Decorative line"
                     src="/frame-10.svg"
                   />
-                  <div className="font-top-titel font-[number:var(--top-titel-font-weight)] text-primary-color text-[length:var(--top-titel-font-size)] tracking-[var(--top-titel-letter-spacing)] leading-[var(--top-titel-line-height)] whitespace-nowrap [font-style:var(--top-titel-font-style)]">
+                  <div className="text-lg font-semibold text-primary-color tracking-wide">
                     Our Technologies
                   </div>
                   <img
@@ -132,8 +108,8 @@ export const SuccessStoriesSection = (): JSX.Element => {
                   />
                 </div>
 
-                <h3 className="font-titel font-[number:var(--titel-font-weight)] text-secondary-color text-[length:var(--titel-font-size)] tracking-[var(--titel-letter-spacing)] leading-[var(--titel-line-height)] whitespace-nowrap [font-style:var(--titel-font-style)]">
-                  Technologies and Platforms We Work
+                <h3 className="text-3xl md:text-4xl font-bold text-secondary-color tracking-tight leading-tight">
+                  Technologies and Platforms We Work On
                 </h3>
               </div>
             </div>
