@@ -1,0 +1,1 @@
+export { IndustryTestimonialsSection } from "./IndustryTestimonialsSection";
